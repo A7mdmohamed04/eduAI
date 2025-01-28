@@ -1,3 +1,6 @@
+// Replace localhost URL with your Glitch URL
+const BACKEND_URL = 'https://eduai-saylo.glitch.me';
+
 function addMessage(message, isUser) {
     const chatMessages = document.getElementById('chat-messages');
     const messageDiv = document.createElement('div');
@@ -18,7 +21,7 @@ async function sendMessage() {
         
         try {
             // Send to backend
-            const response = await fetch('http://localhost:5000/chat', {
+            const response = await fetch(`${BACKEND_URL}/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
